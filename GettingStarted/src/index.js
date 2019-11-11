@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 function Person(props) {
   return (
     <div className="person">
