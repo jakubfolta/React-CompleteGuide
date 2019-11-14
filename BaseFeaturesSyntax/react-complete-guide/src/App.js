@@ -10,7 +10,7 @@ class App extends Component {
       { name: 'Bryan', age: 35 }
     ],
     otherState: 'Other value.'
-  }
+  };
 
   switchNameHandler = () => {
     // console.log('Was clicked !');
@@ -22,7 +22,7 @@ class App extends Component {
         { name: 'Bryan', age: 35 }
       ]
     })
-  }
+  };
 
   render() {
     return (
