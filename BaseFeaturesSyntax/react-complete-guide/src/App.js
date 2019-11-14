@@ -2,29 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 
-class App extends Component {
-  state = {
-    persons: [
-      { name: 'Max', age: 32 },
-      { name: 'Dom', age: 23 },
-      { name: 'Bryan', age: 35 }
-    ],
-    otherState: 'Other value.'
-  };
-
-  switchNameHandler = () => {
-    // console.log('Was clicked !');
-    // DON'T DO THIS this.state.persons[0].name = 'Jake';
-    this.setState({
-      persons: [
-        { name: 'Maxyn', age: 32 },
-        { name: 'Dom', age: 38 },
-        { name: 'Bryan', age: 35 }
-      ]
-    })
-  };
-
-  render() {
+// class App extends Component {
+const app = props => {
+  // render() {
     return (
       <div className="App">
         <h1>Hi, I'm React app.</h1>
@@ -37,6 +17,32 @@ class App extends Component {
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Hi I\'m React appppp!!!'));
   }
-}
+// }
 
-export default App;
+export default app;
+
+
+
+
+
+
+// state = {
+//   persons: [
+//     { name: 'Max', age: 32 },
+//     { name: 'Dom', age: 23 },
+//     { name: 'Bryan', age: 35 }
+//   ],
+//   otherState: 'Other value.'
+// };
+//
+// switchNameHandler = () => {
+//   // console.log('Was clicked !');
+//   // DON'T DO THIS this.state.persons[0].name = 'Jake';
+//   this.setState({
+//     persons: [
+//       { name: 'Maxyn', age: 32 },
+//       { name: 'Dom', age: 38 },
+//       { name: 'Bryan', age: 35 }
+//     ]
+//   })
+// };
