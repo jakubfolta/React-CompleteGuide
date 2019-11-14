@@ -1,10 +1,19 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Person from './Person/Person';
 
 // class App extends Component {
 const app = props => {
   // render() {
+  const stateArr = useState({
+    persons: [
+      { name: 'Max', age: 32 },
+      { name: 'Dom', age: 23 },
+      { name: 'Bryan', age: 35 }
+    ],
+    otherState: 'Other value.'
+  })
+
     return (
       <div className="App">
         <h1>Hi, I'm React app.</h1>
@@ -26,14 +35,7 @@ export default app;
 
 
 
-// state = {
-//   persons: [
-//     { name: 'Max', age: 32 },
-//     { name: 'Dom', age: 23 },
-//     { name: 'Bryan', age: 35 }
-//   ],
-//   otherState: 'Other value.'
-// };
+
 //
 // switchNameHandler = () => {
 //   // console.log('Was clicked !');
