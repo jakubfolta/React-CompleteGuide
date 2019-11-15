@@ -8,7 +8,10 @@ class App extends Component {
 
   render() {
     return (
-      <h1>Hello, I'm React app !!!</h1>
+      <div>
+        <h1>Hello, I'm React app !!!</h1>
+        <UserOutput />
+      </div>
     );
   }
 }

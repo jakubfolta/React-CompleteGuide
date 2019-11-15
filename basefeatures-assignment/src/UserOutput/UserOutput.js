@@ -3,8 +3,8 @@ import React from 'react';
 const userOutput = () => {
   return (
     <div class="Output">
-      <p></p>
-      <p></p>
+      <p>My name is Noctis.</p>
+      <p>My name is Noctis.</p>
     </div>
   )
 }
