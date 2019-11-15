@@ -10,7 +10,10 @@ class App extends Component {
     return (
       <div>
         <h1>Hello, I'm React app !!!</h1>
-        <UserOutput />
+        <UserOutput userName="Ignis"/>
+        <UserOutput userName="Gladio"/>
+        <UserOutput userName="Noct"/>
+        <UserOutput userName="Promto"/>
       </div>
     );
   }
