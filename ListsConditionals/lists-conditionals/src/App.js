@@ -5,15 +5,15 @@ import Person from './Person/Person';
 class App extends Component {
   state = {
     persons: [
-      { id: 'dsa' name: 'Max', age: 32 },
-      { id: 'eqww' name: 'Dom', age: 23 },
-      { id: 'dafc' name: 'Bryan', age: 35 }
+      { id: 'dsa', name: 'Max', age: 32 },
+      { id: 'eqww', name: 'Dom', age: 23 },
+      { id: 'dafc', name: 'Bryan', age: 35 }
     ],
     otherState: 'some other value',
     showPersons: false
   }
 
-  nameChangedHandler = event => {
+  nameChangedHandler = (event, id) => {
     this.setState({
       persons: [
         { name: 'Max', age: 32 },
@@ -56,7 +56,8 @@ class App extends Component {
               click={() => this.deletePersonHandler(index)}
               name={person.name}
               age={person.age}
-              key={person.id} />
+              key={person.id}
+              changed={() => this.nameChangedHandler(person.id)}/>
           })}
         </div>
       );
