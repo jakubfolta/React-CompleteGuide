@@ -19,16 +19,15 @@ class App extends Component {
     });
 
     const person = {
-      ...this.state.persons[personIndex].name = event.target.value
+      ...this.state.persons[personIndex]
     };
 
-    this.setState({
-      persons: [
-        { name: 'Max', age: 32 },
-        { name: event.target.value, age: 28 },
-        { name: 'Bryan', age: 35 }
-      ]
-    })
+    person.name = event.target.value;
+
+    const persons = [...this.state.persons];
+    persons[personIndex] = person;
+
+    this.setState( { persons: persons} )
   }
 
   deletePersonHandler = personIndex => {
