@@ -32,7 +32,11 @@ class App extends Component {
         { name: 'Bryan', age: 35 }
       ]
     })
-  };
+  }
+
+  togglePersonsHandler = () => {
+    
+  }
 
   render() {
     const style = {
@@ -51,14 +55,16 @@ class App extends Component {
         <p>This is working.</p>
         <button
         style={style}
-        onClick={() => this.switchNameHandler('Gladio')}>Switch name!</button>
-        <Person
-          name={this.state.persons[0].name} age={this.state.persons[0].age} />
-        <Person
-          name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(this, 'Noct')}
-          changed={this.nameChangedHandler} >My hobbies: Racing</Person>
-        <Person
-          name={this.state.persons[2].name} age={this.state.persons[2].age} />
+        onClick={this.togglePersonsHandler}>Switch name!</button>
+        <div>
+          <Person
+            name={this.state.persons[0].name} age={this.state.persons[0].age} />
+          <Person
+            name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(this, 'Noct')}
+            changed={this.nameChangedHandler} >My hobbies: Racing</Person>
+          <Person
+            name={this.state.persons[2].name} age={this.state.persons[2].age} />
+        </div>
       </div>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Hi I\'m React appppp!!!'));
