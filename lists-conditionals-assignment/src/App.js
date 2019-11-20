@@ -12,6 +12,13 @@ class App extends Component {
     this.setState({userInput: event.target.value});
   }
 
+  deleteCharHandler = (index) => {
+    let userInput = this.state.userInput.split('');
+    userInput.splice(index, 1);
+    userInput = userInput.join('');
+    this.setState( {userInput: userInput} )
+  }
+
   render() {
     const textLength = this.state.userInput.length;
 
@@ -19,7 +26,9 @@ class App extends Component {
       return (
         <Char
         char={el}
-        index={index}/>
+        index={index}
+        click={this.deleteCharHandler.bind(this, index)}
+        key={index}/>
       )
     });
 
