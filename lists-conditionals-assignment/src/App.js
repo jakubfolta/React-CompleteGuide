@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     const textLength = this.state.userInput.length;
 
-    const charList = this.state.userInput.map((el, index) => {
+    const charList = this.state.userInput.split('').map((el, index) => {
       return (
         <Char
         char={el}
