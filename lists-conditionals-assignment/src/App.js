@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   render() {
-    const textLength = (this.state.userInput).length;
+    let textLength = (this.state.userInput).length;
 
     return (
       <div className="App">
@@ -34,7 +34,7 @@ class App extends Component {
           value={this.state.userInput}/>
         <p>{textLength}</p>
         <ValidationComponent
-        length="{textLength}"/>
+        length={textLength}/>
       </div>
     )
   }
