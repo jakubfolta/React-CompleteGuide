@@ -11,7 +11,12 @@ class App extends Component {
 
   textLengthHandler = (e) => {
     const input = e.target.value;
-    this.setState({input: input})
+    this.setState({input: input});
+  }
+
+  deleteCharHandler = index => {
+    const input = this.state.input;
+
   }
 
   render() {
