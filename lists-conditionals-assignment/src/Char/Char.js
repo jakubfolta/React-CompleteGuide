@@ -11,5 +11,4 @@ const char = props => {
   )
 };
 
-
 export default char;
