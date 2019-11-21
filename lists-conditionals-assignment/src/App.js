@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import validation from './Validation/Validation';
-import char from './Char/Char';
+import Validation from './Validation/Validation';
+import Char from './Char/Char';
 
 class App extends Component {
   state = {
@@ -30,7 +30,8 @@ class App extends Component {
 
         <input onChange={(e) => this.textLengthHandler(e)} />
         <p>{this.state.input}</p>
-
+        <Validation
+        length={this.state.input.length} />
       </div>
     )
   }
