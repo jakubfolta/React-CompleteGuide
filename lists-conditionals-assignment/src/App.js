@@ -1,37 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Validation from './Validation/Validation';
-import Char from './Char/Char';
+
+import validation from './Validation/Validation';
+import char from './Char/Char';
 
 class App extends Component {
-  state = {
-    userInput: ''
-  }
-
-  inputChangedHandler = (event) => {
-    this.setState({userInput: event.target.value});
-  }
-
-  deleteCharHandler = (index) => {
-    let userInput = this.state.userInput.split('');
-    userInput.splice(index, 1);
-    userInput = userInput.join('');
-    this.setState( {userInput: userInput} )
-  }
-
   render() {
-    const textLength = this.state.userInput.length;
-
-    const charList = this.state.userInput.split('').map((el, index) => {
-      return (
-        <Char
-        char={el}
-        index={index}
-        click={this.deleteCharHandler.bind(this, index)}
-        key={index}/>
-      )
-    });
-
     return (
       <div className="App">
         <ol>
@@ -45,18 +19,118 @@ class App extends Component {
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
         <hr />
 
+        <input onChange="this.textLengthHandler" />
+        <p></p>
 
-        <input
-          type="text"
-          onChange={event => this.inputChangedHandler(event)}
-          value={this.state.userInput}/>
-        <p>{textLength}</p>
-        <Validation
-        length={textLength}/>
-        {charList}
       </div>
     )
   }
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { Component } from 'react';
+// import './App.css';
+// import Validation from './Validation/Validation';
+// import Char from './Char/Char';
+//
+// class App extends Component {
+//   state = {
+//     userInput: ''
+//   }
+//
+//   inputChangedHandler = (event) => {
+//     this.setState({userInput: event.target.value});
+//   }
+//
+//   deleteCharHandler = (index) => {
+//     let userInput = this.state.userInput.split('');
+//     userInput.splice(index, 1);
+//     userInput = userInput.join('');
+//     this.setState( {userInput: userInput} )
+//   }
+//
+//   render() {
+//     const textLength = this.state.userInput.length;
+//
+//     const charList = this.state.userInput.split('').map((el, index) => {
+//       return (
+//         <Char
+//         char={el}
+//         index={index}
+//         click={this.deleteCharHandler.bind(this, index)}
+//         key={index}/>
+//       )
+//     });
+//
+//     return (
+//       <div className="App">
+//
+//
+//
+//         <input
+//           type="text"
+//           onChange={event => this.inputChangedHandler(event)}
+//           value={this.state.userInput}/>
+//         <p>{textLength}</p>
+//         <Validation
+//         length={textLength}/>
+//         {charList}
+//       </div>
+//     )
+//   }
+// }
+//
+// export default App;
