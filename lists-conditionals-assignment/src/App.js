@@ -28,7 +28,7 @@ class App extends Component {
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
         <hr />
 
-        <input onChange={(e) => this.textLengthHandler(e)} />
+        <input onChange={(e) => this.textLengthHandler(e)} value={this.state.input}/>
         <p>{this.state.input}</p>
         <Validation
         length={this.state.input.length} />
