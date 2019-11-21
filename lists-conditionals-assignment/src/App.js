@@ -19,7 +19,8 @@ class App extends Component {
       return (
         <Char
         char={char}
-        key={index}/>
+        key={index}
+        delete={this.deleteCharHandler.bind(this, index)}/>
       )
     })
     return (
