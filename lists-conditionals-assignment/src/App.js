@@ -5,6 +5,15 @@ import validation from './Validation/Validation';
 import char from './Char/Char';
 
 class App extends Component {
+  state = {
+    input: ''
+  }
+
+  textLengthHandler = (e) => {
+    const input = e.target.value;
+    this.setState({input: input})
+  }
+
   render() {
     return (
       <div className="App">
@@ -19,8 +28,8 @@ class App extends Component {
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
         <hr />
 
-        <input onChange="this.textLengthHandler" />
-        <p></p>
+        <input onChange={(e) => this.textLengthHandler(e)} />
+        <p>{this.state.input}</p>
 
       </div>
     )
