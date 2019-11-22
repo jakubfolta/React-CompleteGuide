@@ -37,10 +37,6 @@ class App extends Component {
     this.setState({persons: persons})
   }
 
-  togglePersonsHandler = () => {
-    const doesShow = this.state.showPersons;
-    this.setState({showPersons: !doesShow});
-  }
 
   render() {
     const style = {
@@ -75,8 +71,7 @@ class App extends Component {
         <h1>Hi, I'm React app.</h1>
         <p>This is working.</p>
         <button
-        style={style}
-        onClick={this.togglePersonsHandler}>Show list!</button>
+          style={style}>Show persons!</button>
         {persons}
       </div>
     );
@@ -85,6 +80,27 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+
+
+
+
+// togglePersonsHandler = () => {
+//   const doesShow = this.state.showPersons;
+//   this.setState({showPersons: !doesShow});
+// }
+
+//
+// {/* <button
+//   style={style}
+//   onClick={this.togglePersonsHandler}>Show list!</button> */}
+
+
+
+
+
 
 
 
