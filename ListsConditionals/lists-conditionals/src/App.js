@@ -14,9 +14,7 @@ class App extends Component {
   }
 
   nameChangedHandler = (event, id) => {
-    const personIndex = this.state.persons.findIndex(p => {
-      return p.id === id;
-    });
+    const personIndex = this.state.persons.findIndex(p => p.id === id);
 
     const person = {
       ...this.state.persons[personIndex]
@@ -85,28 +83,4 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-
-
-
-
-// togglePersonsHandler = () => {
-//   const doesShow = this.state.showPersons;
-//   this.setState({showPersons: !doesShow});
-// }
-
-//
-// {/* <button
-//   style={style}
-//   onClick={this.togglePersonsHandler}>Show list!</button> */}
-
-
-
-
-
-
-
-
 
