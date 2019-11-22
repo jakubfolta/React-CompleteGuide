@@ -37,6 +37,9 @@ class App extends Component {
     this.setState({persons: persons})
   }
 
+  togglePersonsHandler = () => {
+    
+  }
 
   render() {
     const style = {
@@ -71,7 +74,8 @@ class App extends Component {
         <h1>Hi, I'm React app.</h1>
         <p>This is working.</p>
         <button
-          style={style}>Show persons!</button>
+          style={style}
+          onClick={this.togglePersonsHandler}>Show persons!</button>
         {persons}
       </div>
     );
