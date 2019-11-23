@@ -73,7 +73,11 @@ class App extends Component {
         </div>
       );
 
-      
+      style.backgroundColor = "yellow";
+      style[':hover'] = {
+        backgroundColor: 'gold',
+        color: 'black'
+      }
     }
 
     let classes = [];
