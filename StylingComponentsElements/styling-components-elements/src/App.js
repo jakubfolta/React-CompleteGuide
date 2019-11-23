@@ -1,3 +1,7 @@
+import React, { Component } from 'react';
+import './App.css';
+import Radium from 'radium';
+import Person from './Person/Person';
 
 class App extends Component {
   state = {
