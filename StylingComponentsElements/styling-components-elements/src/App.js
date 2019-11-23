@@ -50,11 +50,7 @@ class App extends Component {
       padding: '8px',
       borderRadius: '25px',
       boxShadow: '2px 2px 3px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+      cursor: 'pointer'
     };
 
     let persons = null;
