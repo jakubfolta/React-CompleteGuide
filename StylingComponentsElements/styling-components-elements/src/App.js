@@ -14,7 +14,14 @@ class App extends Component {
     showPersons: false
   }
 
-  
+  nameChangedHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex(p => p.id === id);
+
+    const person = {
+      ...this.state.persons[personIndex]
+    };
+
+  }
 
   deletePersonHandler = personIndex => {
     // const persons = this.state.persons.slice();
