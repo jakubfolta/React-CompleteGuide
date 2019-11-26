@@ -1,29 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
-
-class App extends Component {
-  render() {
-    return (
-
-    )
-  }
-}
-
-export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-import React, { Component } from 'react';
 import './App.css'
 
 class App extends Component {
@@ -41,6 +16,8 @@ class App extends Component {
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
         <hr />
 
+        <input onChange={this.userInputHandler} />
+        <p></p>
       </div>
     )
   }
