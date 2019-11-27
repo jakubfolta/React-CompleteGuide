@@ -14,6 +14,8 @@ class App extends Component {
   }
 
   render() {
+    const inputLength = this.state.userInput.length;
+
     return (
       <div className='App'>
         <ol>
@@ -28,7 +30,8 @@ class App extends Component {
         <hr />
 
         <input onChange={e => this.userInputHandler(e)} />
-        <p>{this.state.userInput.length}</p>
+        <p>{inputLength}</p>
+        <Validation length={inputLength}/>
       </div>
     )
   }
