@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import './App.css'
 
 class App extends Component {
+  state = {
+    userInput: ''
+  }
+
+  userInputHandler = event => {
+    const userInput = event.target.value;
+    this.setState({userInput: userInput})
+  }
+
   render() {
     return (
       <div className='App'>
@@ -16,8 +25,8 @@ class App extends Component {
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
         <hr />
 
-        <input onChange={this.userInputHandler} />
-        <p></p>
+        <input onChange={e => this.userInputHandler(e)} />
+        <p>{this.state.userInput.length}</p>
       </div>
     )
   }
