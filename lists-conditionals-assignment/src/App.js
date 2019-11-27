@@ -15,7 +15,11 @@ class App extends Component {
   }
 
   deleteCharHandler = index => {
-      
+    const userInputArr = this.state.userInput.split('');
+    userInputArr.splice(index, 1);
+
+    const newUserInput = userInputArr.join('');
+    this.setState({userInput: newUserInput})
   }
 
   render() {
@@ -23,8 +27,11 @@ class App extends Component {
     const input = this.state.userInput;
 
     const char = (
-      input.split('').map(letter => {
-        return <Char char={letter} delete={index => this.deleteCharHandler(index)}/>
+      input.split('').map((letter, index) => {
+        return <Char
+          char={letter}
+          delete={() => this.deleteCharHandler(index)}
+          key= {index}/>
       })
     );
 
@@ -41,7 +48,7 @@ class App extends Component {
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
         <hr />
 
-        <input onChange={e => this.userInputHandler(e)} />
+        <input onChange={e => this.userInputHandler(e)} value={this.state.userInput} />
         <p>{inputLength}</p>
         <Validation length={inputLength}/>
         {char}
