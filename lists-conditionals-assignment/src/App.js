@@ -14,13 +14,17 @@ class App extends Component {
     this.setState({userInput: userInput})
   }
 
+  deleteCharHandler = index => {
+      
+  }
+
   render() {
     const inputLength = this.state.userInput.length;
     const input = this.state.userInput;
 
     const char = (
       input.split('').map(letter => {
-        return <Char char={letter} />
+        return <Char char={letter} delete={index => this.deleteCharHandler(index)}/>
       })
     );
 
