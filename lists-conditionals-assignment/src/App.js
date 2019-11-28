@@ -7,14 +7,13 @@ class App extends Component {
   }
 
   userInputHandler = e => {
-    console.log(e.target.value);
     const userInput = e.target.value;
 
     this.setState({
       input: userInput
     })
-
   }
+
 
   render() {
     const inputLength = this.state.input.length;
@@ -34,6 +33,7 @@ class App extends Component {
 
         <input onChange={e => this.userInputHandler(e)}></input>
         <p>{inputLength}</p>
+        <Validation
 
       </div>
     )
