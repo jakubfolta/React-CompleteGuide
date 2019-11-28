@@ -36,7 +36,8 @@ class App extends Component {
         {this.state.input.split('').map((char, index) => {
           return <Char
           char={char}
-          delete={() => this.deleteCharHandler(index)} />}
+          delete={() => this.deleteCharHandler(index)}
+          key={index} />}
         )}
       </div>
     );
