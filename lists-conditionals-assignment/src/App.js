@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Validation from './Validation/Validation';
+import Char from './Char/Char';
 
 class App extends Component {
   state = {
@@ -20,6 +21,16 @@ class App extends Component {
   render() {
     const inputLength = this.state.input.length;
 
+    const charList = (
+      <div>
+        {this.state.input.split('').map(char => {
+          return <Char
+          char={char}
+          delete={e => this.deleteCharHandler(e)} />}
+        )}
+      </div>
+    );
+
     return (
       <div className="App">
         <ol>
@@ -36,7 +47,7 @@ class App extends Component {
         <input onChange={e => this.userInputHandler(e)}></input>
         <p>{inputLength}</p>
         <Validation length={inputLength} />
-
+        {charList}
       </div>
     )
   }
