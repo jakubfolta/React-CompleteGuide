@@ -31,16 +31,12 @@ class App extends Component {
   render() {
     const inputLength = this.state.input.length;
 
-    const charList = (
-      <div>
-        {this.state.input.split('').map((char, index) => {
+    const charList = this.state.input.split('').map((char, index) => {
           return <Char
           char={char}
           delete={() => this.deleteCharHandler(index)}
           key={index} />}
-        )}
-      </div>
-    );
+        )
 
     return (
       <div className="App">
@@ -55,7 +51,7 @@ class App extends Component {
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
         <hr />
 
-        <input onChange={e => this.userInputHandler(e)} value={this.state.input}></input>
+        <input onChange={this.userInputHandler} value={this.state.input}></input>
         <p>{inputLength}</p>
         <Validation length={inputLength} />
         {charList}
