@@ -9,9 +9,16 @@ class App extends Component {
   userInputHandler = e => {
     console.log(e.target.value);
     const userInput = e.target.value;
+
+    this.setState({
+      input: userInput
+    })
+
   }
 
   render() {
+    const inputLength = this.state.input.length;
+
     return (
       <div className="App">
         <ol>
@@ -25,8 +32,8 @@ class App extends Component {
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
         <hr />
 
-        <input onChange={this.userInputHandler}></input>
-        <p></p>
+        <input onChange={e => this.userInputHandler(e)}></input>
+        <p>{inputLength}</p>
 
       </div>
     )
