@@ -76,19 +76,15 @@ class App extends Component {
       style[':hover'] = {
         backgroundColor: 'yellow',
         color: 'red'
-      }
-
-
-
-
-
-      // style.backgroundColor = "yellow";
-      // style[':hover'] = {
-      //   backgroundColor: 'gold',
-      //   color: 'black'
-      // }
+      };
     }
 
+    let classes = []
+
+    if (this.state.persons <= 2 && this.state.persons !== 0) {
+      classes.push('red');
+    }
+    if (this.state.persons)
 
     return (
       <div className="App">
