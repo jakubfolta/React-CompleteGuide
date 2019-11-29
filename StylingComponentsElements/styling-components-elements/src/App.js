@@ -104,7 +104,8 @@ class App extends Component {
   }
 }
 
-export default Radium(App);
+
+
 
 
 
