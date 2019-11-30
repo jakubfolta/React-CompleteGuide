@@ -79,6 +79,8 @@ class App extends Component {
       };
     }
 
+    const classes = ['red', 'bold'].join(' ')
+
     return (
       <div className="App">
         <h1>Hi, I'm React app.</h1>
