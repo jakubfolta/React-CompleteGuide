@@ -106,16 +106,3 @@ class App extends Component {
 
 export default Radium(App);
 
-
-
-
-// let classes = [];
-//
-// if (this.state.persons.length <= 2 && this.state.persons.length !== 0) {
-//   classes.push('red');
-// }
-// if (this.state.persons.length === 1) {
-//   classes.push('bold');
-// }
-//
-// classes = classes.join(' ');
