@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import styled from 'styled-components';
 import Person from './Person/Person';
+
+const StyledButton = styled.button`
+  background-color: ${props => props.alt ? 'red' : 'green'};
+  color: blue;
+  font: inherit;
+  border: 2px solid blue;
+  padding: 8px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 3px;
+  cursor: pointer;
+  &:hover {
+    background-color: ${props => props.alt ? 'orange' : 'grey'};;
+    color: black;
+`
 
 class App extends Component {
   state = {
@@ -10,7 +24,7 @@ class App extends Component {
       { id: 'eqww', name: 'Dom', age: 23 },
       { id: 'dafc', name: 'Bryan', age: 35 }
     ],
-    otherState: 'some other value',
+
     showPersons: false
   }
 
@@ -41,21 +55,6 @@ class App extends Component {
   }
 
   render() {
-    const style = {
-      backgroundColor: 'green',
-      color: 'blue',
-      font: 'inherit',
-      border: '2px solid blue',
-      padding: '8px',
-      borderRadius: '25px',
-      boxShadow: '2px 2px 3px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'gold',
-        color: 'black'
-      }
-    };
-
     let persons = null;
 
     if (this.state.showPersons) {
@@ -71,15 +70,7 @@ class App extends Component {
           })}
         </div>
       );
-
-      style.backgroundColor = "gold";
-      style[':hover'] = {
-        backgroundColor: 'grey',
-        color: 'red'
-      }
     }
-
-    //const classes = ['red', 'bold'].join(' ') // classes = 'red bold'
 
     const classes = []
 
@@ -92,15 +83,14 @@ class App extends Component {
 
     return (
         <div className="App">
-          <h1>Hi, I'm React app.</h1>
+        <h1>Hi, I'm React app.</h1>
           <p className={classes.join(' ')}>This is working.</p>
-          <button
-            style={style}
-            onClick={this.togglePersonsHandler}>Show persons!</button>
+          <StyledButton alt={this.state.showPersons}
+            onClick={this.togglePersonsHandler}>Show persons!</StyledButton>
           {persons}
         </div>
     );
-    // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Hi I\'m React appppp!!!'));
   }
 }
+
 export default App;

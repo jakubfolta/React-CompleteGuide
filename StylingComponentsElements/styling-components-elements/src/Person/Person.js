@@ -10,20 +10,15 @@ const StyledDiv = styled.div`
   border: 2px solid hsl(100, 43%, 50%);
   padding: 16px;
   text-align: center;
-`
+
+  @media (min-width: 500px) {
+    width: 30%;
+  }
+`;
 
 const person = (props) => {
-  const style = {
-   '@media (min-width: 500px)': {
-     width: '50%',
-     textAlign: 'left',
-     padding: '16px',
-     margin: '60px auto',
-   }
-  };
-
   return (
-    <StyledDiv style={style}>
+    <StyledDiv>
       <p onClick={props.click}>I'm a {props.name}. And I'm a it {props.age} years old.</p>
       <p>{props.children}</p>
       <input type="text" onChange={props.changed} value={props.name}/>
