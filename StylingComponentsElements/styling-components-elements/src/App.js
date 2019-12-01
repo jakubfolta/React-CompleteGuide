@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -41,6 +41,8 @@ class App extends Component {
 
   render() {
     let persons = null;
+    let btnClasses = '';
+
 
     if (this.state.showPersons) {
       persons = (
@@ -55,24 +57,25 @@ class App extends Component {
           })}
         </div>
       );
+      btnClasses = classes.Red;
     }
 
-    const classes = []
+    const assignClasses = [];
 
     if (this.state.persons.length <= 2 && this.state.persons.length > 0) {
-      classes.push('red');
+      assignClasses.push(classes.Red);
     }
     if (this.state.persons.length === 1) {
-      classes.push('bold');
+      assignClasses.push(classes.Bold);
     }
 
     return (
-        <div className="App">
+      <div className={classes.App}>
         <h1>Hi, I'm React app.</h1>
-          <p className={classes.join(' ')}>This is working.</p>
-          <button className="button" onClick={this.togglePersonsHandler}>Show persons!</button>
-          {persons}
-        </div>
+        <p className={assignClasses.join(' ')}>This is working.</p>
+        <button className={btnClasses} onClick={this.togglePersonsHandler}>Show persons!</button>
+        {persons}
+      </div>
     );
   }
 }
