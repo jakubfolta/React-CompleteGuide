@@ -4,7 +4,7 @@ import './Char.css';
 
 const char = props => {
   return (
-    <div className="Char">
+    <div className="Char" onClick={props.delete}>
       {props.letter}
     </div>
   )
