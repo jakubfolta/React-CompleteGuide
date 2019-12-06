@@ -4,7 +4,7 @@ import './Char.css';
 
 const char = props => {
   return (
-    <div>
+    <div className="Char">
       {props.letter}
     </div>
   )
