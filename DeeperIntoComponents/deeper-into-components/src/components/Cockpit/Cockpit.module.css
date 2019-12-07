@@ -1,0 +1,37 @@
+.Cockpit button {
+  color: gold;
+}
+
+.Bold {
+  font-weight: bold;
+}
+
+.Red {
+  background-color: green;
+}
+
+.Cockpit button {
+  background-color: red;
+  color: blue;
+  font: inherit;
+  border: 2px solid blue;
+  padding: 8px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 3px;
+  cursor: pointer;
+  outline: none;
+  transition: .5s;
+}
+
+.Cockpit button:active {
+  transform: translateY(-5px);
+}
+
+.Cockpit button.Red:hover {
+  background-color: white;
+  color: black;
+}
+
+.Cockpit button.Red {
+  background-color: red;
+}
