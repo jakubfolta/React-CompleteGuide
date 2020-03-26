@@ -53,12 +53,16 @@ class App extends Component {
         style={style}
         onClick={() => this.switchNameHandler('Gladio')}>Switch name!</button>
         <Person
-          name={this.state.persons[0].name} age={this.state.persons[0].age} />
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age} />
         <Person
-          name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(this, 'Noct')}
+          name={this.state.persons[1].name}
+          age={this.state.persons[1].age}
+          click={this.switchNameHandler.bind(this, 'Noct')}
           changed={this.nameChangedHandler} >My hobbies: Racing</Person>
         <Person
-          name={this.state.persons[2].name} age={this.state.persons[2].age} />
+          name={this.state.persons[2].name}
+          age={this.state.persons[2].age} />
       </div>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Hi I\'m React appppp!!!'));
