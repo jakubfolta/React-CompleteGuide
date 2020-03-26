@@ -9,6 +9,12 @@ class App extends Component {
     userName: 'Barret'
   }
 
+  changeStateHandler = e => {
+    this.setState = {
+      userName: e.target.value
+    }
+  }
+
   render() {
     return (
       <div className='App'>
