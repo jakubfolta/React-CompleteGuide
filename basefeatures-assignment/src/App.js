@@ -10,16 +10,27 @@ class App extends Component {
   }
 
   changeStateHandler = e => {
-    this.setState = {
-      userName: e.target.value
-    }
+    this.setState({
+        userName: e.target.value
+    })
   }
 
   render() {
+    const style = {
+      padding: '5px',
+      border: '1px solid black',
+      borderRadius: '10px',
+    };
+
     return (
       <div className='App'>
-        <UserOutput name = 'Jaccob' />
-        <UserOutput name = {this.state.userName} />
+        <UserInput
+          style={style}
+          change={this.changeStateHandler}
+          name={this.state.userName} />
+
+        <UserOutput name="Jaccob" />
+        <UserOutput name={this.state.userName} />
       </div>
     )
   }
