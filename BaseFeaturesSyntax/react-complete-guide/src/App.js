@@ -62,7 +62,8 @@ class App extends Component {
           changed={this.nameChangedHandler} >My hobbies: Racing</Person>
         <Person
           name={this.state.persons[2].name}
-          age={this.state.persons[2].age} />
+          age={this.state.persons[2].age}
+          click={() => this.switchNameHandler('Noctis')} />
       </div>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Hi I\'m React appppp!!!'));
