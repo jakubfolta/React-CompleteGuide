@@ -21,9 +21,7 @@ class App extends Component {
     inputArr.splice(index, 1);
     const newInput = inputArr.join('');
 
-    this.setState({
-      userInput: newInput
-    })
+    this.setState({userInput: newInput})
   }
 
   render() {
@@ -32,6 +30,7 @@ class App extends Component {
     const charList = this.state.userInput.split('').map((l, index) => {
           return <Char
             letter={l}
+            key={index}
             delete={() => this.deleteCharHandler(index)}></Char>
         })
 
