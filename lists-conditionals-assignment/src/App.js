@@ -35,7 +35,6 @@ class App extends Component {
             delete={() => this.deleteCharHandler(index)}></Char>
         })
 
-
     return (
       <div className="App">
         <ol>
