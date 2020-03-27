@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.App button {
-  color: gold;
-}
-
 .Bold {
   font-weight: bold;
 }
@@ -32,4 +28,8 @@
 
 .App button.Red {
   background-color: red;
+}
+
+.Gold {
+  background-color: gold;
 }
