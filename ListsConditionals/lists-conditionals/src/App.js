@@ -13,7 +13,19 @@ class App extends Component {
     showPersons: false
   }
 
+  nameChangedHandler = (e, id) => {
+    const personIndex = this.state.persons.findIndex(el => el.id === id);
 
+    const person = {
+      ...this.state.persons[personIndex]
+    }
+    person.name = e.target.value;
+
+    const updatedPersons = [...this.state.persons];
+    updatedPersons[personIndex] = person;
+
+    this.setState({persons: updatedPersons})
+  }
 
 
 
