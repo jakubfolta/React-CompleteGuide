@@ -21,34 +21,11 @@ class App extends Component {
     }
     person.name = e.target.value;
 
-    const updatedPersons = [...this.state.persons]
+    const updatedPersons = [...this.state.persons];
+    updatedPersons[personIndex].name = e.target.value;
+
+    this.setState({persons: updatedPersons});
   }
-
-
-
-
-
-
-
-
-
-
-
-
-  // nameChangedHandler = (event, id) => {
-  //   const personIndex = this.state.persons.findIndex(p => p.id === id);
-  //
-  //   const person = {
-  //     ...this.state.persons[personIndex]
-  //   };
-  //
-  //   person.name = event.target.value;
-  //
-  //   const persons = [...this.state.persons];
-  //   persons[personIndex] = person;
-  //
-  //   this.setState( { persons: persons} )
-  // }
 
   deletePersonHandler = personIndex => {
     // const persons = this.state.persons.slice();
