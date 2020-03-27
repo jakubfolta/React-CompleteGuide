@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Validation from './Validation/Validation';
+import Char from './Char/Char';
 
 import './App.css';
 
@@ -16,8 +17,24 @@ class App extends Component {
     })
   }
 
+  deleteLetterHandler = index => {
+    const updatedUserInput = {...this.state.userInput};
+    const letterList = updatedUserInput.split('');
+  }
+
   render() {
     const textLength = this.state.userInput.length;
+
+    const letters = (
+      <div>
+        {this.state.userInput.map((l, index) => {
+          return <Char
+          letter={l}
+          index={index}
+          delete={this.deleteLetterHandler.bind(this, index)} />
+        })}
+      </div>
+    )
 
     return (
       <div className="App">
@@ -36,6 +53,8 @@ class App extends Component {
         <p value={this.state.userInput}>Your text: {this.state.userInput}</p>
         <Validation
           length={textLength} />
+
+        {letters}
       </div>
     )
   }
