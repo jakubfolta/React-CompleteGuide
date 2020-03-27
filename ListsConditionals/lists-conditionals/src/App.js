@@ -13,20 +13,33 @@ class App extends Component {
     showPersons: false
   }
 
-  nameChangedHandler = (event, id) => {
-    const personIndex = this.state.persons.findIndex(p => p.id === id);
 
-    const person = {
-      ...this.state.persons[personIndex]
-    };
 
-    person.name = event.target.value;
 
-    const persons = [...this.state.persons];
-    persons[personIndex] = person;
 
-    this.setState( { persons: persons} )
-  }
+
+
+
+
+
+
+
+
+
+  // nameChangedHandler = (event, id) => {
+  //   const personIndex = this.state.persons.findIndex(p => p.id === id);
+  //
+  //   const person = {
+  //     ...this.state.persons[personIndex]
+  //   };
+  //
+  //   person.name = event.target.value;
+  //
+  //   const persons = [...this.state.persons];
+  //   persons[personIndex] = person;
+  //
+  //   this.setState( { persons: persons} )
+  // }
 
   deletePersonHandler = personIndex => {
     // const persons = this.state.persons.slice();
@@ -48,41 +61,26 @@ class App extends Component {
       padding: '8px',
       borderRadius: '25px',
       boxShadow: '2px 2px 3px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      outline: 'none'
     };
 
-    
+    let persons = null;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // let persons = null;
-    //
-    // if (this.state.showPersons) {
-    //   persons = (
-    //     <div>
-    //       {this.state.persons.map((person, index) => {
-    //         return <Person
-    //           click={() => this.deletePersonHandler(index)}
-    //           name={person.name}
-    //           age={person.age}
-    //           key={person.id}
-    //           changed={event => this.nameChangedHandler(event, person.id)}/>
-    //       })}
-    //     </div>
-    //   );
-    // }
+    if (this.state.showPersons) {
+      persons = (
+        <div>
+          {this.state.persons.map((person, index) => {
+            return <Person
+              click={this.deletePersonHandler.bind(this, index)}
+              name={person.name}
+              age={person.age}
+              key={person.id}
+              changed={e => this.nameChangedHandler(e, person.id)} />
+          })}
+        </div>
+      );
+    }
 
     return (
       <div className="App">
