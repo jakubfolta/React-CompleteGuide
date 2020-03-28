@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from './App.css';
+import './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -59,16 +59,16 @@ class App extends Component {
           })}
         </div>
       );
-      btnClasses = classes.Red;
+      btnClasses = 'Red';
     }
 
     const assignClasses = [];
     if (this.state.persons <= 2) {
-      assignClasses.push('red');
+      assignClasses.push('Red');
     }
 
     return (
-      <div className={classes.App}>
+      <div className="App">
         <h1>Hi, I'm React app.</h1>
         <p className={assignClasses.join(' ')}>This is working.</p>
         <button className={btnClasses} onClick={this.togglePersonsHandler}>Show persons!</button>
