@@ -63,7 +63,9 @@ class App extends Component {
     }
 
     const assignClasses = [];
-    
+    if (this.state.persons <= 2) {
+      assignClasses.push('red');
+    }
 
     return (
       <div className={classes.App}>
