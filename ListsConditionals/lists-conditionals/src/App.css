@@ -1,3 +1,11 @@
 .App {
   text-align: center;
 }
+
+.Bold {
+  font-weight: bold;
+}
+
+.Red {
+  color: red;
+}
