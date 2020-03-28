@@ -1,27 +1,3 @@
 .App {
   text-align: center;
 }
-
-.Bold {
-  font-weight: bold;
-}
-
-.Red {
-  background-color: red;
-}
-
-.App button {
-  background-color: grey;
-  color: blue;
-  font: inherit;
-  border: 2px solid blue;
-  padding: 8px;
-  border-radius: 25px;
-  box-shadow: 2px 2px 3px;
-  cursor: pointer;
-  outline: none;
-}
-
-.Gold {
-  background-color: gold;
-}
