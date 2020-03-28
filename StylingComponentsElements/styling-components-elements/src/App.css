@@ -7,11 +7,11 @@
 }
 
 .Red {
-  background-color: green;
+  background-color: red;
 }
 
 .App button {
-  background-color: red;
+  background-color: grey;
   color: blue;
   font: inherit;
   border: 2px solid blue;
@@ -19,15 +19,7 @@
   border-radius: 25px;
   box-shadow: 2px 2px 3px;
   cursor: pointer;
-}
-
-.App button.Red:hover {
-  background-color: white;
-  color: black;
-}
-
-.App button.Red {
-  background-color: red;
+  outline: none;
 }
 
 .Gold {

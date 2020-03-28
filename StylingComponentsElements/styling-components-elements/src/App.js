@@ -62,14 +62,7 @@ class App extends Component {
       btnClasses = classes.Red;
     }
 
-    const assignClasses = [];
-
-    if (this.state.persons.length <= 2 && this.state.persons.length > 0) {
-      assignClasses.push(classes.Red);
-    }
-    if (this.state.persons.length === 1) {
-      assignClasses.push(classes.Bold);
-    }
+    
 
     return (
       <div className={classes.App}>
