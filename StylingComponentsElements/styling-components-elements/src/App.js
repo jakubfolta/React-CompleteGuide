@@ -62,6 +62,7 @@ class App extends Component {
       btnClasses = classes.Red;
     }
 
+    const assignClasses = [];
     
 
     return (
