@@ -67,7 +67,9 @@ class App extends Component {
     if (this.state.persons.length <= 2 && this.state.persons.length > 0) {
       assignClasses.push(classes.Red);
     }
-    
+    if (this.state.persons.length === 1) {
+      assignClasses.push(classes.Bold);
+    }
 
     return (
       <div className={classes.App}>
