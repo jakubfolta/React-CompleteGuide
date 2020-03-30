@@ -62,7 +62,7 @@ class App extends Component {
 
   render() {
     let persons = null;
-    let btnClasses = '';
+    const hClasses = [classes.Heading];
 
     const style = {             // RADIUM
       backgroundColor: 'blue',
@@ -89,7 +89,8 @@ class App extends Component {
           })}
         </div>
       );
-      // btnClasses = classes.Red;
+
+      hClasses.push(classes.Green);
     }
 
     const assignClasses = [];
@@ -109,6 +110,7 @@ class App extends Component {
           <StyledButton
             alt={this.state.showPersons}
             onClick={this.togglePersonsHandler}>Show persons! </StyledButton>
+            <h3 className={hClasses.join(' ')}>See you later!</h3>
           {persons}
         </div>
     );

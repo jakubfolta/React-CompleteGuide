@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.Heading {
+  font-size: 12px;
+}
+
+.Heading.Green {
+  font-size: 18px;
+  color: green;
+}
+
 .Btn {
   color: red;
   padding: 10px;
