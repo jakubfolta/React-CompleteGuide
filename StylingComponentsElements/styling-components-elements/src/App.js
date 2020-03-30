@@ -1,25 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.module.css';
-import Radium from 'radium';
-import styled from 'styled-components';
+
 import Person from './Person/Person';
-
-const StyledButton = styled.button`
-  color: ${props => props.alt ? 'black' : 'red'};
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 10px;
-  background-color: grey;
-  outline: none;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${props => props.alt ? 'grey' : 'lightgrey'};
-  }
-`
 
 class App extends Component {
   state = {
@@ -34,7 +16,7 @@ class App extends Component {
 
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
-      return p.id === id;
+      return p.idd === id;
     });
 
     const person = {
@@ -64,16 +46,9 @@ class App extends Component {
     let persons = null;
     const hClasses = [classes.Heading];
 
-    const style = {             // RADIUM
+    const style = {
       backgroundColor: 'blue',
-      color: 'white',
-      ':hover': {
-        backgroundColor: 'green'
-      },
-
-      '@media screen and (max-width: 500px)': {
-        backgroundColor: 'yellow'
-      }
+      color: 'white'
     }
 
     if (this.state.showPersons) {
@@ -107,9 +82,8 @@ class App extends Component {
           <h1>Hi, I'm React app.</h1>
           <h2 style={style}>Hi, It's cool.</h2>
           <p className={assignClasses.join(' ')}>This is working.</p>
-          <StyledButton
-            alt={this.state.showPersons}
-            onClick={this.togglePersonsHandler}>Show persons! </StyledButton>
+          <button
+            onClick={this.togglePersonsHandler}>Show persons! </button>
             <h3 className={hClasses.join(' ')}>See you later!</h3>
           {persons}
         </div>
@@ -117,4 +91,4 @@ class App extends Component {
   }
 }
 
-export default Radium(App); // RADIUM
+export default App;

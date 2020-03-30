@@ -17,10 +17,20 @@
 }
 
 .Btn {
-  color: red;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
   padding: 10px;
+  border: 1px solid black;
   border-radius: 10px;
   background-color: grey;
+  outline: none;
+  cursor: pointer;
+}
+
+.Btn:hover {
+  background-color: lightgrey;
 }
 
 .Bold {
