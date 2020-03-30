@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 // import classes from './Person.css';
 
-const StyledDiv = styled.div`
+const StyledDiv = styled.div`           // Styled components
   background-color: hsl(129, 100%, 50%);
   width: 80%;
   margin: 10px auto;

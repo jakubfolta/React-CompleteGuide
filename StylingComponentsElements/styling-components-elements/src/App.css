@@ -2,8 +2,11 @@
   text-align: center;
 }
 
-.Red {
+.Btn {
   color: red;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: grey;
 }
 
 .Bold {

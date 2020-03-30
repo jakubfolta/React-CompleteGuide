@@ -1,7 +1,25 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 import Radium from 'radium';
+import styled from 'styled-components';
 import Person from './Person/Person';
+
+const StyledButton = styled.button`
+  color: ${props => props.alt ? 'black' : 'red'};
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: grey;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${props => props.alt ? 'grey' : 'lightgrey'};
+  }
+`
 
 class App extends Component {
   state = {
@@ -58,7 +76,6 @@ class App extends Component {
       }
     }
 
-
     if (this.state.showPersons) {
       persons = (
         <div>
@@ -72,7 +89,7 @@ class App extends Component {
           })}
         </div>
       );
-      btnClasses = classes.Red;
+      // btnClasses = classes.Red;
     }
 
     const assignClasses = [];
@@ -89,7 +106,9 @@ class App extends Component {
           <h1>Hi, I'm React app.</h1>
           <h2 style={style}>Hi, It's cool.</h2>
           <p className={assignClasses.join(' ')}>This is working.</p>
-          <button className={btnClasses} onClick={this.togglePersonsHandler}>Show persons!</button>
+          <StyledButton
+            alt={this.state.showPersons}
+            onClick={this.togglePersonsHandler}>Show persons! </StyledButton>
           {persons}
         </div>
     );
