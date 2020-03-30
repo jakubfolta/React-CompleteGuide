@@ -46,11 +46,15 @@ class App extends Component {
     let persons = null;
     let btnClasses = '';
 
-    const style = {
+    const style = {             // RADIUM
       backgroundColor: 'blue',
       color: 'white',
       ':hover': {
         backgroundColor: 'green'
+      },
+
+      '@media screen and (max-width: 500px)': {
+        backgroundColor: 'yellow'
       }
     }
 
@@ -81,15 +85,15 @@ class App extends Component {
     }
 
     return (
-      <div className={classes.App}>
-        <h1>Hi, I'm React app.</h1>
-        <h2 style={style}>Hi, It's cool.</h2>
-        <p className={assignClasses.join(' ')}>This is working.</p>
-        <button className={btnClasses} onClick={this.togglePersonsHandler}>Show persons!</button>
-        {persons}
-      </div>
+        <div className={classes.App}>
+          <h1>Hi, I'm React app.</h1>
+          <h2 style={style}>Hi, It's cool.</h2>
+          <p className={assignClasses.join(' ')}>This is working.</p>
+          <button className={btnClasses} onClick={this.togglePersonsHandler}>Show persons!</button>
+          {persons}
+        </div>
     );
   }
 }
 
-export default Radium(App);
+export default Radium(App); // RADIUM
