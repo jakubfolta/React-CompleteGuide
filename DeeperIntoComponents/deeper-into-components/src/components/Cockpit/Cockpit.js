@@ -28,5 +28,4 @@ const cockpit = props => {
   )
 }
 
-
 export default cockpit;
