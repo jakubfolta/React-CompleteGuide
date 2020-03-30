@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classes from './App.css';
+import Radium from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -45,6 +46,14 @@ class App extends Component {
     let persons = null;
     let btnClasses = '';
 
+    const style = {
+      backgroundColor: 'blue',
+      color: 'white',
+      ':hover': {
+        backgroundColor: 'green'
+      }
+    }
+
 
     if (this.state.showPersons) {
       persons = (
@@ -64,7 +73,7 @@ class App extends Component {
 
     const assignClasses = [];
 
-    if (this.state.persons.length <= 2 && this.state.persons.length > 0) {
+    if (this.state.persons.lengfth <= 2 && this.state.persons.length > 0) {
       assignClasses.push(classes.Red);
     }
     if (this.state.persons.length === 1) {
@@ -74,6 +83,7 @@ class App extends Component {
     return (
       <div className={classes.App}>
         <h1>Hi, I'm React app.</h1>
+        <h2 style={style}>Hi, It's cool.</h2>
         <p className={assignClasses.join(' ')}>This is working.</p>
         <button className={btnClasses} onClick={this.togglePersonsHandler}>Show persons!</button>
         {persons}
@@ -82,4 +92,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Radium(App);
