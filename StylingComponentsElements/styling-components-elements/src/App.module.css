@@ -11,6 +11,11 @@
   color: green;
 }
 
+.Heading.Green:hover {
+  font-size: 18px;
+  color: red;
+}
+
 .Btn {
   color: red;
   padding: 10px;
