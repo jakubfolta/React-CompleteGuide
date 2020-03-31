@@ -36,18 +36,15 @@ const Cockpit = props => {
     assignClasses.push(classes.Bold);
   }
 
-  return [
-    <h1 key='ds'>{props.title}</h1>,
-    <p key='dse' className={assignClasses.join(' ')}>This is working.</p>,
-    <button
-      key='og'
-      className={btnClass}
-      onClick={props.toggle}>Show persons! </button>
-
-  ]
-
-
-
+  return (
+    <div className={classes.Cockpit}>
+      <h1>{props.title}</h1>
+      <p className={assignClasses.join(' ')}>This is working.</p>
+      <button
+        className={btnClass}
+        onClick={props.toggle}>Show persons! </button>
+    </div>
+  )
 }
 
 export default React.memo(Cockpit);
