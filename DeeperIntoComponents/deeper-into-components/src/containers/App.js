@@ -5,7 +5,7 @@ import classes from './App.module.css';
 import withClass from '../hoc/withClass';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
-import AuthContext from '../context/auth.context';
+import AuthContext from '../context/auth-context';
 
 class App extends Component {
   constructor(props) {
