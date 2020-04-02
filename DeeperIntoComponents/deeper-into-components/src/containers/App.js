@@ -113,7 +113,7 @@ class App extends Component {
             showPersons={this.state.showPersons}
             toggle={this.togglePersonsHandler}
             personsLength={this.state.persons.length}
-            login={this.loginHandler}/> : null}
+            /> : null}
             {persons}
         </AuthContext.Provider>
       </Aux>
