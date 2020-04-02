@@ -18,6 +18,7 @@ class Person extends Component {
     console.log('[Person.js] rendering')
     return (
       <Fragment>
+        {this.props.isAuth ? <p>Authenticated</p> : <p>Please Log in!</p>}
         <p onClick={this.props.click}>I'm a {this.props.name}. And I'm {this.props.age} years old.</p>
         <p>{this.props.children}</p>
         <input
@@ -25,7 +26,8 @@ class Person extends Component {
           onChange={this.props.changed}
           // ref={inp => {this.inpElement = inp}}
           ref={this.inputElRef}
-          value={this.props.name}/>
+          value={this.props.name}
+          />
       </Fragment>
     );
   }
