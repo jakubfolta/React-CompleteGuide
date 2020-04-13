@@ -3,8 +3,6 @@ import axios from 'axios';
 
 import './FullPost.css';
 
-const selectedPost = 'https://jsonplaceholder.typicode.com/posts/';
-
 class FullPost extends Component {
     state = {
       selectedPost: null
