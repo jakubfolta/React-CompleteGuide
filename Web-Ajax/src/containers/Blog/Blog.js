@@ -16,16 +16,17 @@ class Blog extends Component {
           this.setState({
             posts: response.data
           });
-          // console.log(response);
+          console.log(response);
         });
     }
     render () {
+      const postsList = this.state.posts.map(post => {
+        return <Post key={post.id} title={post.title} author={post.userId}/>
+      })
         return (
             <div>
                 <section className="Posts">
-                    <Post />
-                    <Post />
-                    <Post />
+                    {postsList};
                 </section>
                 <section>
                     <FullPost />
