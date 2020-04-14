@@ -14,7 +14,7 @@ class Blog extends Component {
     }
 
     componentDidMount() {
-      axios.get('https://jsonplaceholder.typicode.com/postssss')
+      axios.get('https://jsonplaceholder.typicode.com/posts')
         .then(response => {
           const randomNum = Math.floor(Math.random() * response.data.length);
           const posts = response.data.slice((randomNum), randomNum + 4);
@@ -40,7 +40,7 @@ class Blog extends Component {
 
     render () {
       let postsList = this.state.error ? <p className='Error'>Something went wrong</p> :
-      postsList = this.state.posts.map(post => {
+      this.state.posts.map(post => {
         return <Post
           key={post.id}
           title={post.title}
