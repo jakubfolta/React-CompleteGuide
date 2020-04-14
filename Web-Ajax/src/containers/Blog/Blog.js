@@ -9,11 +9,12 @@ import './Blog.css';
 class Blog extends Component {
     state = {
       posts: [],
-      selectedPost: null
+      selectedPost: null,
+      error: false
     }
 
     componentDidMount() {
-      axios.get('https://jsonplaceholder.typicode.com/posts')
+      axios.get('https://jsonplaceholder.typicode.com/postssss')
         .then(response => {
           const randomNum = Math.floor(Math.random() * response.data.length);
           const posts = response.data.slice((randomNum), randomNum + 4);
@@ -26,6 +27,10 @@ class Blog extends Component {
           this.setState({
             posts: updatedPosts
           });
+        })
+        .catch(error => {
+          console.log(error);
+          this.setState({error: true});
         });
     }
 
@@ -34,13 +39,15 @@ class Blog extends Component {
     }
 
     render () {
-      const postsList = this.state.posts.map(post => {
+      let postsList = this.state.error ? <p className='Error'>Something went wrong</p> :
+      postsList = this.state.posts.map(post => {
         return <Post
           key={post.id}
           title={post.title}
           author={post.author}
           selected={() => this.selectPostHandler(post.id)} />
-      })
+      });
+
         return (
             <div>
                 <section className="Posts">
