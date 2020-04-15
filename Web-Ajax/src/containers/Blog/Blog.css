@@ -25,15 +25,6 @@
   color: orange;
 }
 
-
-.Posts {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 80%;
-    margin: auto;
-}
-
 .Error {
   position: absolute;
   top: 50%;
