@@ -22,7 +22,7 @@
 
 .Blog a:hover,
 .Blog a:active,
-.Blog a.my-active {
+.Blog a.active {
   color: hsl(67, 100%, 42%);
   text-shadow: 2px 2px 4px hsl(7, 100%, 43%);
 }
