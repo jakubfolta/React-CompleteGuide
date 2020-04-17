@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Posts.css';
 import axios from '../../../axios';
@@ -6,8 +7,7 @@ import Post from '../../../components/Post/Post';
 
 class Posts extends Component {
   state = {
-    posts: [],
-    selectedPost: null
+    posts: []
   }
 
   componentDidMount() {
@@ -39,11 +39,14 @@ class Posts extends Component {
   render() {
     let postsList = this.state.error ? <p className='Error'>Something went wrong</p> :
     this.state.posts.map(post => {
-      return <Post
-        key={post.id}
-        title={post.title}
-        author={post.author}
-        selected={() => this.selectPostHandler(post.id)} />
+      return (
+        <Link to={'/' + post.id} key={post.id}>
+          <Post
+            title={post.title}
+            author={post.author}
+            selected={() => this.selectPostHandler(post.id)} />
+        </Link>
+      )
     });
 
     return (
