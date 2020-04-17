@@ -21,8 +21,10 @@
 }
 
 .Blog a:hover,
-.Blog a:active {
-  color: orange;
+.Blog a:active,
+.Blog a.active {
+  color: hsl(67, 100%, 42%);
+  text-shadow: 2px 2px 4px hsl(7, 100%, 43%);
 }
 
 .Error {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link, withRouter } from 'react-router-dom';
+import { Route, NavLink, withRouter } from 'react-router-dom';
 
 import './Blog.css';
 import Posts from './Posts/Posts';
@@ -13,12 +13,12 @@ class Blog extends Component {
               <header className="Blog">
                 <nav>
                   <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to={{
+                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to={{
                       pathname: this.props.match.url + 'new-post',
                       hash: '#submit',
                       search: '?quick-submit=true'
-                    }}>New post</Link></li>
+                    }}>New post</NavLink></li>
                   </ul>
                 </nav>
               </header>
