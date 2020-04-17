@@ -15,17 +15,18 @@ class Blog extends Component {
                   <ul>
                     <li><NavLink
                       exact
-                      to="/"
-                      activeClassName='active'
+                      to='/'
+                      activeClassName="active"
                       activeStyle={{
-                        color: 'blue',
-                        textDecoration: 'underline'
+                        color: 'red'
                       }} >Home</NavLink></li>
-                    <li><NavLink to={{
-                      pathname: this.props.match.url + 'new-post',
-                      hash: '#submit',
-                      search: '?quick-submit=true'
-                    }}>New post</NavLink></li>
+                    <li><NavLink
+                      to={{
+                        pathname: this.props.match.url + 'new-post',
+                        hash: '#submit',
+                        search: '?quick-submit=true'
+                      }}
+                      >New Post</NavLink></li>
                   </ul>
                 </nav>
               </header>
