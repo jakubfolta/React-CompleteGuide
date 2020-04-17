@@ -8,7 +8,8 @@ class FullPost extends Component {
       selectedPost: null
     }
 
-    componentDidUpdate() {
+    componentDidMount() {
+      console.log(this.props);
       if (this.props.id) {
         if (!this.state.selectedPost || (this.state.selectedPost && this.state.selectedPost.id !== this.props.id)) {
           axios.get('/posts/' + this.props.id)
