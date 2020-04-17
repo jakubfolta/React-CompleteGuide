@@ -22,9 +22,13 @@
 
 .Blog a:hover,
 .Blog a:active,
-.Blog a.active {
+.Blog a.my-active {
   color: hsl(67, 100%, 42%);
   text-shadow: 2px 2px 4px hsl(7, 100%, 43%);
+}
+
+.Blog li:active {
+  transform: translateY(2px);
 }
 
 .Error {

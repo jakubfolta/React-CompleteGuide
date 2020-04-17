@@ -13,7 +13,10 @@ class Blog extends Component {
               <header className="Blog">
                 <nav>
                   <ul>
-                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink
+                      exact
+                      to="/"
+                      activeClassName='my-active' >Home</NavLink></li>
                     <li><NavLink to={{
                       pathname: this.props.match.url + 'new-post',
                       hash: '#submit',

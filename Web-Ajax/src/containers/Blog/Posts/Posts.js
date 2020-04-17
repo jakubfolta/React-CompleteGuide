@@ -48,7 +48,7 @@ class Posts extends Component {
 
     return (
       <section className="Posts">
-          {postsList};
+          {postsList}
       </section>
     )
   }
