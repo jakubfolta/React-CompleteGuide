@@ -40,12 +40,7 @@ class Posts extends Component {
     let postsList = this.state.error ? <p className='Error'>Something went wrong</p> :
     this.state.posts.map(post => {
       return (
-        <Link to={'/' + post.id} key={post.id}>
-          <Post
-            title={post.title}
-            author={post.author}
-            selected={() => this.selectPostHandler(post.id)} />
-        </Link>
+        
       )
     });
 
