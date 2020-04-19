@@ -14,13 +14,7 @@ class Blog extends Component {
               <header className="Blog">
                 <nav>
                   <ul>
-                    <li><NavLink
-                      exact
-                      to='/'
-                      activeClassName="active"
-                      activeStyle={{
-                        color: 'red'
-                      }} >Home</NavLink></li>
+                    
                     <li><NavLink
                       to={{
                         // pathname: this.props.match.url + 'new-post',
