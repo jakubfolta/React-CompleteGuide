@@ -8,11 +8,10 @@ class FullPost extends Component {
       selectedPost: null
     }
 
-    setIDHandler
-
     componentDidMount() {
+      let id = this.props.match.params['id'];
+      this.setState({ id: id });
 
-      console.log(this.props.match.url.split('/').splice(1, 1));
       if (this.props.id) {
         if (!this.state.selectedPost || (this.state.selectedPost && this.state.selectedPost.id !== this.props.id)) {
           axios.get('/posts/' + this.props.id)

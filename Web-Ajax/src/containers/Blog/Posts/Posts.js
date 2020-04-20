@@ -11,7 +11,7 @@ class Posts extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match);
+    console.log(this.props);
   axios.get('/posts')
     .then(response => {
       const randomNum = Math.floor(Math.random() * response.data.length);
