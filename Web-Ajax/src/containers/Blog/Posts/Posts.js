@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import './Posts.css';
 import axios from '../../../axios';
@@ -40,12 +40,13 @@ class Posts extends Component {
     let postsList = this.state.error ? <p className='Error'>Something went wrong</p> :
     this.state.posts.map(post => {
       return (
-        <Link to={'/' + post.id} key={post.id}>
+        // <Link to={'/' + post.id} key={post.id}>
           <Post
+            key={post.id}
             title={post.title}
             author={post.author}
             selected={() => this.selectPostHandler(post.id)} />
-        </Link>
+        // </Link>
       )
     });
 

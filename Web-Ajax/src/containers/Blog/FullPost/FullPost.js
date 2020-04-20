@@ -10,6 +10,7 @@ class FullPost extends Component {
 
     componentDidMount() {
       const id = this.props.match.params['id'];
+      console.log(id);
 
       if (id) {
         if (!this.state.selectedPost || (this.state.selectedPost && this.state.selectedPost.id !== id)) {
