@@ -9,12 +9,11 @@ class FullPost extends Component {
     }
 
     componentDidMount() {
-      let id = this.props.match.params['id'];
-      this.setState({ id: id });
+      const id = this.props.match.params['id'];
 
-      if (this.props.id) {
-        if (!this.state.selectedPost || (this.state.selectedPost && this.state.selectedPost.id !== this.props.id)) {
-          axios.get('/posts/' + this.props.id)
+      if (id) {
+        if (!this.state.selectedPost || (this.state.selectedPost && this.state.selectedPost.id !== id)) {
+          axios.get('/posts/' + id)
           .then(response => {
             this.setState({selectedPost: response.data})
           });
@@ -29,7 +28,7 @@ class FullPost extends Component {
 
     render () {
         let post = <p style={{textAlign: 'center'}}>Please select a Post!</p>;
-        if (this.props.id) {
+        if (this.props.match.params['id']) {
           post = <p style={{textAlign: 'center'}}>Loading!</p>;
         }
         if (this.state.selectedPost) {
