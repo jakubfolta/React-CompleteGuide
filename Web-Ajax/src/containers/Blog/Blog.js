@@ -20,7 +20,7 @@ class Blog extends Component {
                       activeClassName="active"
                       activeStyle={{
                         color: 'red'
-                      }} >Home</NavLink></li>
+                      }} >Posts</NavLink></li>
                     <li><NavLink
                       to={{
                         pathname: this.props.match.url + 'new-post',
@@ -32,10 +32,9 @@ class Blog extends Component {
                   </ul>
                 </nav>
               </header>
-              <Route path="/" exact component={Posts} />
               <Switch>
+                <Route path="/" exact component={Posts} />
                 <Route path="/new-post" component={NewPost} />
-                <Route path="/:id" exact component={FullPost} />
               </Switch>
             </div>
         );
