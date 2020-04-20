@@ -35,10 +35,11 @@ class Posts extends Component {
   }
 
   selectPostHandler = id => {
-    this.props.history.push({pathname: id});
+    this.props.history.push('/posts/' + id);
   }
 
   render() {
+    console.log(this.props);
     let postsList = this.state.error ? <p className='Error'>Something went wrong</p> :
     this.state.posts.map(post => {
       return (
@@ -57,7 +58,7 @@ class Posts extends Component {
         <section className="Posts">
           {postsList}
         </section>
-        <Route path="/:id" exact component={FullPost} />
+        <Route path={this.props.match.url + "/:id"} exact component={FullPost} />
       </div>
     )
   }
