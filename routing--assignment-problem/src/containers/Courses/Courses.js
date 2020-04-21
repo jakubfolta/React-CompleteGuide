@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
+import Course from '../Course/Course';
 import './Courses.css';
 
 class Courses extends Component {
@@ -32,6 +33,7 @@ class Courses extends Component {
                 <section className="Courses">
                     {courses}
                 </section>
+                <Route path="/courses/:id" component={Course} />
             </div>
         );
     }
