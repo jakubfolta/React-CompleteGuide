@@ -1,6 +1,8 @@
 .App ul {
   margin: 0;
   padding: 0;
+  width: 50%;
+  margin: 0 auto;
   list-style: none;
   display: flex;
   justify-content: space-around;
@@ -14,6 +16,8 @@
   font-size: 1.5rem;
   font-weight: bold;
 }
+
+.App a.active { color: hsl(139, 100%, 46%); } 
 
 .App a:hover {
   color: hsl(85, 100%, 43%);

@@ -13,11 +13,13 @@ class App extends Component {
         <nav>
           <ul>
               <li><NavLink
+                exact
                 to={{
                   pathname: "/courses",
                   hash: "#submit",
                   search: "?quick-submit=true"
-              }}>
+              }}
+                activeStyle={{color: 'hsl(192, 100%, 43%)'}} >
                 Courses</NavLink></li>
               <li><NavLink
                 to={{
