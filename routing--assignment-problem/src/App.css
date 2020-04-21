@@ -17,7 +17,7 @@
   font-weight: bold;
 }
 
-.App a.active { color: hsl(139, 100%, 46%); } 
+.App a.active { color: hsl(139, 100%, 46%); }
 
 .App a:hover {
   color: hsl(85, 100%, 43%);
