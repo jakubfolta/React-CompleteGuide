@@ -1,14 +1,33 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { Route, NavLink, withRouter } from 'react-router-dom';
 
+import classes from './App.module.css';
 import Courses from './containers/Courses/Courses';
 import Users from './containers/Users/Users';
 
 class App extends Component {
   render () {
+    console.log(this.props);
     return (
-    <BrowserRouter>
       <div className="App">
+        <nav>
+          <ul>
+              <li><NavLink
+                to={{
+                  pathname: "/courses",
+                  hash: "#submit",
+                  search: "?quick-submit=true"
+              }}>
+                Courses</NavLink></li>
+              <li><NavLink
+                to={{
+                  pathname: "/users",
+                  hash: "#submit",
+                  search: "?quick-submit=true"
+              }}>
+                Users</NavLink></li>
+          </ul>
+        </nav>
         <ol style={{textAlign: 'left'}}>
           <li>Add Routes to load "Users" and "Courses" on different pages (by entering a URL, without Links)</li>
           <li>Add a simple navigation with two links => One leading to "Users", one leading to "Courses"</li>
@@ -19,10 +38,12 @@ class App extends Component {
           <li>Add a 404 error page and render it for any unknown routes</li>
           <li>Redirect requests to /all-courses to /courses (=> Your "Courses" page)</li>
         </ol>
+
+        <Route path="/courses" component={Courses}/>
+        <Route path="/users" component={Users}/>
       </div>
-    </BrowserRouter>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

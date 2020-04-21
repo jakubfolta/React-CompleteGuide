@@ -1,0 +1,20 @@
+.App ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.App a:link,
+.App a:active {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.App a:hover {
+  color: hsl(85, 100%, 43%);
+}
