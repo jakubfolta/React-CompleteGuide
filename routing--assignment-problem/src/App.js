@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import Courses from './containers/Courses/Courses';
 import Users from './containers/Users/Users';
@@ -6,6 +7,7 @@ import Users from './containers/Users/Users';
 class App extends Component {
   render () {
     return (
+    <BrowserRouter>
       <div className="App">
         <ol style={{textAlign: 'left'}}>
           <li>Add Routes to load "Users" and "Courses" on different pages (by entering a URL, without Links)</li>
@@ -18,6 +20,7 @@ class App extends Component {
           <li>Redirect requests to /all-courses to /courses (=> Your "Courses" page)</li>
         </ol>
       </div>
+    </BrowserRouter>
     );
   }
 }
