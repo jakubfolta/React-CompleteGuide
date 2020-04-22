@@ -1,0 +1,21 @@
+ul {
+  list-style: none;
+}
+
+ul li {
+  display: inline-block;
+  margin: 1rem;
+}
+
+a:link,
+a:active {
+  text-decoration: none;
+  color: hsl(300, 25%, 1%);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+a:hover,
+a.active {
+  color: hsl(117, 100%, 43%);
+}
