@@ -1,24 +1,20 @@
-.App ul {
-  margin: 0;
-  padding: 0;
-  width: 50%;
-  margin: 0 auto;
+ul {
   list-style: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
-.App a:link,
-.App a:active {
-  text-decoration: none;
-  color: #000;
+nav li {
+  display: inline-block;
+  margin: 1rem;
+}
+
+a:link,
+a:active {
   font-size: 1.5rem;
   font-weight: bold;
+  text-decoration: none;
+  color: hsl(110, 99%, 45%);
 }
 
-.App a.active { color: hsl(139, 100%, 46%); }
-
-.App a:hover {
-  color: hsl(85, 100%, 43%);
+a:hover {
+  color: hsl(110, 99%, 65%);
 }
