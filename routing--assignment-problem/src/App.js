@@ -3,7 +3,6 @@ import { Route, NavLink } from 'react-router-dom';
 
 import './App.css';
 import Courses from './containers/Courses/Courses';
-import Course from './containers/Course/Course';
 import Users from './containers/Users/Users';
 
 class App extends Component {
@@ -40,8 +39,7 @@ class App extends Component {
           <li>Add a 404 error page and render it for any unknown routes</li>
           <li>Redirect requests to /all-courses to /courses (=> Your "Courses" page)</li>
         </ol>
-        <Route path="/courses/:id" component={Course} />
-        <Route path="/courses" exact component={Courses} />
+        <Route path="/courses" component={Courses} />
         <Route path="/users" component={Users} />
       </div>
     );

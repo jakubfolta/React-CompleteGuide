@@ -3,13 +3,27 @@ import { withRouter } from 'react-router-dom';
 
 class Course extends Component {
   state = {
+    id: null,
     title: null
   }
 
   componentDidMount() {
-    const query = new URLSearchParams(this.props.location.search);
-    for (let param of query.entries()) {
-      this.setState({title: param[1]})
+    this.loadData();
+  }
+
+  componentDidUpdate() {
+    this.loadData();
+  }
+
+  loadData = () => {
+    const id = +(this.props.match.params.id);
+    if (id) {
+      if (!this.state.id || (this.state.id && this.state.id !== id)) {
+        const query = new URLSearchParams(this.props.location.search);
+        for (let param of query.entries()) {
+          this.setState({title: param[1], id: id})
+        }
+      }
     }
   }
 
@@ -18,7 +32,7 @@ class Course extends Component {
         return (
             <div>
                 <h1>{this.state.title}</h1>
-                <p>You selected the Course with ID: {this.props.match.params.id}</p>
+                <p>You selected the Course with ID: {this.state.id}</p>
             </div>
         );
     }
