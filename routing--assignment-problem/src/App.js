@@ -4,6 +4,7 @@ import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import Courses from './containers/Courses/Courses';
 import Users from './containers/Users/Users';
+import NotFound from './components/NotFound/NotFound';
 
 class App extends Component {
   render () {
@@ -40,6 +41,7 @@ class App extends Component {
         <Switch>
           <Route path="/courses" component={Courses} />
           <Route path="/users" component={Users} />
+          <Route component={NotFound} />
         </Switch>
       </div>
     );
