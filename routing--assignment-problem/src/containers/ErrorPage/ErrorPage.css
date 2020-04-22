@@ -1,0 +1,16 @@
+.Error {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: hsl(6, 94%, 40%);
+  color: hsl(205, 87%, 3%);
+  font-size: 5rem;
+  font-weight: bold;
+}

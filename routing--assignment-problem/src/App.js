@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
 
 import './App.css';
 import Courses from './containers/Courses/Courses';
 import Users from './containers/Users/Users';
+import ErrorPage from './containers/ErrorPage/ErrorPage';
 
 class App extends Component {
   render () {
@@ -41,6 +42,7 @@ class App extends Component {
         </ol>
         <Route path="/courses" component={Courses} />
         <Route path="/users" component={Users} />
+        <Route component={ErrorPage} />
       </div>
     );
   }
