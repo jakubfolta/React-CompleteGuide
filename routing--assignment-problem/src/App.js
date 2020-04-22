@@ -39,6 +39,7 @@ class App extends Component {
           <li>Redirect requests to /all-courses to /courses (=> Your "Courses" page)</li>
         </ol>
         <Switch>
+          <Redirect from="/all-courses" to="/courses" />
           <Route path="/courses" component={Courses} />
           <Route path="/users" component={Users} />
           <Route component={NotFound} />
