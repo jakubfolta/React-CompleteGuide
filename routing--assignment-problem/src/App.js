@@ -3,6 +3,7 @@ import { Route, NavLink } from 'react-router-dom';
 
 import './App.css';
 import Courses from './containers/Courses/Courses';
+import Course from './containers/Course/Course';
 import Users from './containers/Users/Users';
 
 class App extends Component {
@@ -39,6 +40,7 @@ class App extends Component {
         </ol>
         <Route path="/courses" component={Courses} />
         <Route path="/users" component={Users} />
+        <Route path="/courses/:id" component={Course} />
       </div>
     );
   }
