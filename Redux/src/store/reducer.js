@@ -1,5 +1,6 @@
 const initialState = {
-  counter: 0
+  counter: 0,
+  results: [5]
 }
 
 const reducer = (state = initialState, action) => {
@@ -20,8 +21,13 @@ const reducer = (state = initialState, action) => {
       return {
         counter: state.counter - action.payload.value
       }
+    case 'STORE':
+      return {
+        ...state,
+        results: state.results.push(action.value)
+      }
   }
-  
+
   return state;
 };
 
