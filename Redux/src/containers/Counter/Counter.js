@@ -44,7 +44,7 @@ const mapDispatchToProps = dispatch => {
     onAdd5: () => dispatch({type: 'ADD', payload: { value: 5 }}),
     onSubtract5: () => dispatch({type: 'SUBTRACT', payload: { value: 5 }}),
     onStoreResult: () => dispatch({type: 'STORE'}),
-    onDeleteResult: () => dispatch({type: 'DELETE', id: key})
+    onDeleteResult: (id) => dispatch({type: 'DELETE', elId: id})
   }
 }
 
