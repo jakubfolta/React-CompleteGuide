@@ -36,7 +36,8 @@ class Persons extends Component {
                         key={person.id}
                         name={person.name}
                         age={person.age}
-                        clicked={() => this.personDeletedHandler(person.id)}/>
+                        // clicked={() => this.props.onPersonDeletedHandler(person.id)}
+                      />
                 ))}
             </div>
         );
@@ -51,7 +52,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onPersonAddedHandler: dispatch(type: actionTypes.ADD)
+    onPersonAddedHandler: () => dispatch({type: actionTypes.ADD}),
+    // onPersonDeleteHandler: (id) => dispatch({type: actionTypes.DELETE, id: id})
   }
 }
 
