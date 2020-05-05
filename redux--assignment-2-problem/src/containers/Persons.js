@@ -9,7 +9,7 @@ class Persons extends Component {
     render () {
         return (
             <div>
-                <AddPerson personAdded={this.personAddedHandler} />
+                <AddPerson personAdded={this.props.onAddPersonHandler} />
                 {this.props.persons.map(person => (
                     <Person
                         key={person.id}
