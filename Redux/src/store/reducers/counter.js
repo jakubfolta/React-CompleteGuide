@@ -27,7 +27,6 @@ const reducer = (state = initialState, action) => {
         counter: state.counter - action.payload.value
       }
   }
-
   return state;
 };
 
