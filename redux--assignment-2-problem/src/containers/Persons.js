@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Person from '../components/Person/Person';
 import AddPerson from '../components/AddPerson/AddPerson';
 
 class Persons extends Component {
-    state = {
-        persons: []
-    }
-
     personAddedHandler = () => {
         const newPerson = {
             id: Math.random(), // not really unique but good enough here!
@@ -29,11 +26,11 @@ class Persons extends Component {
         return (
             <div>
                 <AddPerson personAdded={this.personAddedHandler} />
-                {this.state.persons.map(person => (
-                    <Person 
+                {this.props.persons.map(person => (
+                    <Person
                         key={person.id}
-                        name={person.name} 
-                        age={person.age} 
+                        name={person.name}
+                        age={person.age}
                         clicked={() => this.personDeletedHandler(person.id)}/>
                 ))}
             </div>
@@ -41,4 +38,10 @@ class Persons extends Component {
     }
 }
 
-export default Persons;
+const mapStateToProps = state => {
+  return {
+    persons: state.persons
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Persons);
