@@ -4,10 +4,20 @@ import './AddPerson.css';
 
 class addPerson extends Component {
   state = {
-    name: null
+    name: '',
+    age: ''
+  }
+
+  nameChangeHandler = (e) => {
+    this.setState({name: e.target.value});
+  }
+
+  ageChangeHandler = (e) => {
+    this.setState({age: e.target.value});
   }
 
   render() {
+    console.log(this.state.name);
     return (
       <div className="AddPerson">
         <input
@@ -15,8 +25,14 @@ class addPerson extends Component {
           type="text"
           placeholder="Name"
           value={this.state.name}
-          onChange={this.props.change}  />
-          <button onClick={this.props.personAdded}>Add Person</button>
+          onChange={this.nameChangeHandler}  />
+        <input
+          style={{display: 'block', margin: '5px auto'}}
+          type="number"
+          placeholder="Age"
+          value={this.state.age}
+          onChange={this.ageChangeHandler}  />
+          <button onClick={() => this.props.personAdded(this.state.name, this.state.age)}>Add Person</button>
         </div>
     )
   }
