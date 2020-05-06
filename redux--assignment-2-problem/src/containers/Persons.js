@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'redux';
+import { connect } from 'react-redux';
 
 import Person from '../components/Person/Person';
 import AddPerson from '../components/AddPerson/AddPerson';
 import * as actionTypes from '../store/actions';
 
 class Persons extends Component {
-    
-
-    personDeletedHandler = (personId) => {
-        this.setState( ( prevState ) => {
-            return { persons: prevState.persons.filter(person => person.id !== personId)}
-        } );
-    }
-
     render () {
         return (
             <div>
@@ -39,7 +31,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onAddPersonHandler: () => dispatch({type: actionTypes.ADD}),
-    onDeletePersonHandler: () => dispatch({type: actionTypes.DELETE})
+    onDeletePersonHandler: (id) => dispatch({type: actionTypes.DELETE, id: id})
   }
 }
 
