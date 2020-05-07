@@ -18,10 +18,11 @@ const reducer = (state = initialState, action) => {
       }
     case actionTypes.DELETE:
       return {
-        ...state
+        ...state,
+        persons: state.persons.filter(person => person.id !== action.id)
       }
   }
   return state;
 }
 
-export default state;
+export default reducer;
