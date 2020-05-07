@@ -5,7 +5,14 @@ import './AddPerson.css';
 class addPerson extends Component {
   state = {
     name: '',
-    age: null
+    age: ''
+  }
+
+  NameChangeHandler = ( e ) => {
+    this.setState({name: e.target.value});
+  }
+  AgeChangeHandler = ( e ) => {
+    this.setState({age: e.target.value});
   }
 
   render() {
@@ -16,14 +23,14 @@ class addPerson extends Component {
           type="text"
           placeholder="Name"
           value={this.state.name}
-          onChange={this.onNameChangeHandler}  />
+          onChange={this.NameChangeHandler}  />
         <input
           style={{display: 'block', margin: '5px auto'}}
           type="number"
           placeholder="Age"
           value={this.state.age}
-          onChange={this.onAgeChangeHandler}  />
-        <button onClick={this.props.personAdded}>Add Person</button>
+          onChange={this.AgeChangeHandler}  />
+        <button onClick={() => this.props.personAdded(this.state.name, this.state.age)}>Add Person</button>
       </div>
     );
   }
