@@ -6,14 +6,6 @@ import AddPerson from '../components/AddPerson/AddPerson';
 import * as actionTypes from '../store/actions';
 
 class Persons extends Component {
-
-
-    personDeletedHandler = (personId) => {
-        this.setState( ( prevState ) => {
-            return { persons: prevState.persons.filter(person => person.id !== personId)}
-        } );
-    }
-
     render () {
         return (
             <div>
@@ -23,7 +15,7 @@ class Persons extends Component {
                         key={person.id}
                         name={person.name}
                         age={person.age}
-                        clicked={() => this.props.onDeletePersonHandle(person.id)}/>
+                        clicked={() => this.props.onDeletePersonHandler(person.id)}/>
                 ))}
             </div>
         );
