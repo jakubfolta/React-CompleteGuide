@@ -12,7 +12,7 @@ import resultReducer from './store/reducers/result';
 const rootReducer = combineReducers({
   ctr: counterReducer,
   res: resultReducer
-})
+});
 
 const store = createStore(rootReducer);
 

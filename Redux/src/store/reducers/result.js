@@ -17,10 +17,10 @@ const reducer = (state = initialState, action) => {
     // const newArray = [...state.results];
     // newArray.splice(index, 1);
 
-    const newArray = state.results.filter(el => el.id !== action.elId)
+    const newArray = state.results.filter(el => el.id !== action.elId);
     return {
       ...state,
-      results: newArray,
+      results: newArray
     }
   }
   return state;
