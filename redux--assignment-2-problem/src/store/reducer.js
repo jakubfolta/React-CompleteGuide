@@ -5,5 +5,17 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-  
+  switch (action.type) {
+    case actionTypes.ADD:
+      return {
+        ...state
+      }
+    case actionTypes.DELETE:
+      return {
+        ...state
+      }
+  }
+  return state;
 }
+
+export default state;
