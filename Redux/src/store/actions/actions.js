@@ -17,20 +17,20 @@ export const decrement = () => {
   }
 }
 
-export const add = () => {
+export const add = (val) => {
   return {
     type: 'ADD',
     payload: {
-      value: 5
+      value: val
     }
   }
 }
 
-export const subtract = () => {
+export const subtract = (val) => {
   return {
     type: 'SUBTRACT',
     payload: {
-      value: 5
+      value: val
     }
   }
 }
