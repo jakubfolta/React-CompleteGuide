@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers} from 'redux';
 
 import './index.css';
 import App from './App';
@@ -14,16 +14,19 @@ const rootReducer = combineReducers({
   res: resultReducer
 });
 
-const logger = store => {
-  return next => {
-    return action => {
-      console.log('[Middleware] Dispatching', action);
-      const result = next(action);
-      console.log('[Middleware] next next state', store.getState());
-      return result;
-    }
-  }
-}
+
+
+
+// const logger = store => {
+//   return next => {
+//     return action => {
+//       console.log('[Middleware] Dispatching', action);
+//       const result = next(action);
+//       console.log('[Middleware] next next state', store.getState());
+//       return result;
+//     }
+//   }
+// }
 
 const store = createStore(rootReducer, applyMiddleware(logger));
 
